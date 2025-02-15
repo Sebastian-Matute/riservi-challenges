@@ -21,18 +21,18 @@ error_reporting(E_ALL); // Si el examen está bien hecho NO debe mostrar ningún
 
 // ************************************ FUNCION A COMPLETAR **************************************** //
 
-function examen(){
-
+function examen($min, $max, &$list){
+	$pattern = '/^\d{1,3}$/';
 	if(
 		!is_int($min) || 
 		!is_int($max) ||
 		$min < 1 || 
-    $max > 999 ||
+    	$max > 999 ||
 		$max <= $min || 
 		strlen((string)$min) > 3 ||
 		!is_array($list) ||
-		!empty($list)
-		//!preg_match($pattern, (string)$min) || !preg_match($pattern, (string)$max) 
+		!empty($list) ||
+		!preg_match($pattern, (string)$min) || !preg_match($pattern, (string)$max) 
 	)
 	{
 		return FALSE;

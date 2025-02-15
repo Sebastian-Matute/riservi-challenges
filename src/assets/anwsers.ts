@@ -1,12 +1,17 @@
 export const answers = {
   first: `
-    function examen(){
+    function examen($min, $max, &$list){
+      $pattern = '/^\d{1,3}$/';
       if(
-        !is_int($min) || !is_int($max) || $min < 1 ||
-        $max > 999 || $max <= $min ||
-        strlen((string)$min) > 3 || !is_array($list) ||
-        !empty($list)
-        //!preg_match($pattern, (string)$min) || !preg_match($pattern, (string)$max)
+        !is_int($min) || 
+        !is_int($max) ||
+        $min < 1 || 
+          $max > 999 ||
+        $max <= $min || 
+        strlen((string)$min) > 3 ||
+        !is_array($list) ||
+        !empty($list) ||
+        !preg_match($pattern, (string)$min) || !preg_match($pattern, (string)$max) 
       ) { return FALSE; }
 
       for ($i = $min; $i <= $max; $i++) {
@@ -17,7 +22,7 @@ export const answers = {
           $text = 'FOO';
         } else if($i % 5 === 0) {
           $text = 'BAR';
-        }
+        } 
         
         $list[$i] = $text;
       }
