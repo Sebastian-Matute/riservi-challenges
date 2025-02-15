@@ -1,0 +1,68 @@
+@import "./base.css";
+
+#app {
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-weight: normal;
+}
+
+a,
+.green {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+  padding: 3px;
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    display: flex;
+    place-items: center;
+  }
+
+  #app {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 2rem;
+  }
+}
+
+.language-javascript {
+  width: 800px!important;
+  max-height: 500px;
+  overflow: scroll;
+}
+
+.language-javascript::-webkit-scrollbar {
+  height: 5px;
+  width: 5px;
+  cursor: pointer;
+}
+
+.language-javascript::-webkit-scrollbar-track {
+  width: 5px;
+}
+
+.language-javascript::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  width: 5px;
+  cursor: pointer;
+  background-color: #04bba3;
+}
+
+.language-javascript::-webkit-scrollbar-corner {
+  background-color: transparent; 
+}
+
+@media (max-width: 1024px) {
+  .language-javascript {
+    width: 100%!important;
+  }
+}
